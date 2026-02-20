@@ -1,0 +1,79 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.container { /* this contains all other divs/elements */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container #header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #080808;
+}
+
+.container #header p {
+    margin: -15px 0 0 0;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5865F2;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    background-color: #4752C4;
+    transform: scale(1.05);
+}
+
+.discord-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #080808;
+}
+
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #5865F2;
+}
