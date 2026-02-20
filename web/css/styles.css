@@ -3,10 +3,17 @@ body {
     margin: 0;
 }
 
-.container { /* this contains all other divs/elements */
+.container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container #header {
@@ -22,10 +29,29 @@ body {
 }
 
 .login-container {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: #cdcdcd;
+    width: 33%;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 5px;
+}
+
+.login-container p {
+    margin-top: 0;
+    text-align: center;
+}
+
+.signup-link {
+    color: blue;
+    text-decoration: none;
 }
 
 .login-button {
