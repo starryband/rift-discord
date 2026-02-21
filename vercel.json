@@ -3,7 +3,7 @@
     "routes": [
         {
             "src": "api/(.*)",
-            "dist": "api/auth"
+            "dest": "api/auth"
         }
     ]
 }
