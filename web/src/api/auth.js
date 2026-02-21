@@ -102,3 +102,4 @@ app.get("/api/auth/callback", function (request, response) { return __awaiter(vo
         }
     });
 }); });
+exports.default = app;
