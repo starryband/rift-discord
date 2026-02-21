@@ -7,6 +7,14 @@
     "watch": "tsc -w"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "process": "^0.11.10",
+    "serverless-http": "^4.0.0",
+    "vercel": "^41.0.2"
   }
 }
