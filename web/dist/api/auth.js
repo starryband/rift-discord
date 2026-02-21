@@ -48,5 +48,5 @@ app.get("/api/auth/callback", async (request, response) => {
         return response.status(500).send("OAuth failed");
     }
 });
-export default app;
+module.exports = app;
 //# sourceMappingURL=auth.js.map

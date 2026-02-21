@@ -61,4 +61,4 @@ app.get("/api/auth/callback", async(request: Request, response: Response) => {
     }
 });
 
-export default app;
+module.exports = app;
