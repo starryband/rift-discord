@@ -4,5 +4,4 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "/api/auth/login";
     });
 });
-export {};
 //# sourceMappingURL=index.js.map
