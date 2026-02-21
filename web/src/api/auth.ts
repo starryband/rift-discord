@@ -5,7 +5,7 @@ import type { Request, Response } from "express";
 const app = express();
 
 app.get("/api/auth/login", (request: Request, response: Response) => {
-    const redirect_uri = encodeURIComponent(process.env.DISCORD_REDIRECT_URI_DEBUG!);
+    const redirect_uri = encodeURIComponent(process.env.DISCORD_REDIRECT_URI!);
     const url =
     `https://discord.com/api/oauth2/authorize` +
     `?client_id=${process.env.DISCORD_CLIENT_ID}` + 
