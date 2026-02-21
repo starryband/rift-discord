@@ -61,3 +61,5 @@ app.get("/api/auth/callback", async(request: Request, response: Response) => {
         return response.status(500).send("OAuth failed");
     }
 });
+
+export default app;
