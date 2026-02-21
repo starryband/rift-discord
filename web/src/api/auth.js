@@ -38,16 +38,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var app = (0, express_1.default)();
-app.get("/api/auth/login", function (request, response) {
-    var redirect_uri = encodeURIComponent(process.env.DISCORD_REDIRECT_URI_DEBUG);
+app.get("/api/auth/login", function (req, res) {
+    var redirect_uri = encodeURIComponent(process.env.DISCORD_REDIRECT_URI);
     var url = "https://discord.com/api/oauth2/authorize" +
         "?client_id=".concat(process.env.DISCORD_CLIENT_ID) +
-        "&redirect_uri=".concat(redirect_uri) +
+        "&redirect_uri=https://rift-discord.vercel.app/api/auth/callback" +
         "&response_type=code" +
         "&scope=identify%20guilds";
-    response.redirect(url);
+    res.redirect(url);
 });
-app.get("api/auth/callback", function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
+app.get("/api/auth/callback", function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
     var code, params, token_response, token_data, user_response, user, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -97,7 +97,6 @@ app.get("api/auth/callback", function (request, response) { return __awaiter(voi
             case 6:
                 error_1 = _a.sent();
                 console.error(error_1);
-                alert(error_1);
                 return [2 /*return*/, response.status(500).send("OAuth failed")];
             case 7: return [2 /*return*/];
         }

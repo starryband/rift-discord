@@ -1,22 +1,22 @@
 import express from "express";
-import serverless from "serverless-http";
 import type { Request, Response } from "express";
 
 const app = express();
 
-app.get("/api/auth/login", (request: Request, response: Response) => {
+app.get("/api/auth/login", (req: Request, res: Response) => {
     const redirect_uri = encodeURIComponent(process.env.DISCORD_REDIRECT_URI!);
-    const url =
-    `https://discord.com/api/oauth2/authorize` +
-    `?client_id=${process.env.DISCORD_CLIENT_ID}` + 
-    `&redirect_uri=https://discord.com/oauth2/authorize?client_id=1465354210869776467&response_type=code&redirect_uri=https%3A%2F%2Frift-discord.vercel.app%2Fapi%2Fauth%2Fcallback&scope=identify+guilds` +
-    `&response_type=code` +
-    `&scope=identify%20guilds`;
 
-    response.redirect(url);
+    const url =
+        `https://discord.com/api/oauth2/authorize` +
+        `?client_id=${process.env.DISCORD_CLIENT_ID}` +
+        `&redirect_uri=https://rift-discord.vercel.app/api/auth/callback` +
+        `&response_type=code` +
+        `&scope=identify%20guilds`;
+
+    res.redirect(url);
 });
 
-app.get("api/auth/callback", async(request: Request, response: Response) => {
+app.get("/api/auth/callback", async(request: Request, response: Response) => {
     const code = request.query.code as string | undefined
     if (!code) {
         return response.status(400).send("Invalid or no code provided");
@@ -58,7 +58,6 @@ app.get("api/auth/callback", async(request: Request, response: Response) => {
         return response.json(user);
     } catch (error) {
         console.error(error);
-        alert(error);
         return response.status(500).send("OAuth failed");
     }
 });
