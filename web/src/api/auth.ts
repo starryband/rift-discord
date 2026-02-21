@@ -9,7 +9,7 @@ app.get("/api/auth/login", (request: Request, response: Response) => {
     const url =
     `https://discord.com/api/oauth2/authorize` +
     `?client_id=${process.env.DISCORD_CLIENT_ID}` + 
-    `&redirect_uri=${redirect_uri}` +
+    `&redirect_uri=https://discord.com/oauth2/authorize?client_id=1465354210869776467&response_type=code&redirect_uri=https%3A%2F%2Frift-discord.vercel.app%2Fapi%2Fauth%2Fcallback&scope=identify+guilds` +
     `&response_type=code` +
     `&scope=identify%20guilds`;
 
